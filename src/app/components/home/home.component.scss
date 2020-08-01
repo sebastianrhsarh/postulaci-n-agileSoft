@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    margin-top: 20px;
+    font-family: copperplate;
+  }
+
+  &__card {
+    margin: 10px;
+    color: black;
+    &__headers__header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__filter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 290px;
+
+    button {
+      color: white;
+    }
+  }
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}

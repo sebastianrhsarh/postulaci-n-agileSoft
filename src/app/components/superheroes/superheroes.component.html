@@ -1,0 +1,14 @@
+<div class="container">
+  <h1 class="container__title">¿Quién puede volar?</h1>
+  <div class="container__filter">
+    <button type="button" class="btn btn-success" (click)="search(true)">Vuela</button>
+    <button type="button" class="btn btn-danger" (click)="search(false)">No vuela</button>
+  </div>
+  <div class="container__card card" style="width: 18rem;" *ngFor="let superhero of filterSuperhero">
+    <img class="card-img-top" [src]="superhero.avatarURL" alt="Card image cap" onError="this.src='assets/mujermaravilla.jpg'">
+    <div class="card-body">
+      <h5 class="card-title">{{ superhero.nombre }}</h5>
+      <p class="card-text">{{ superhero.descripcion }}</p>
+    </div>
+  </div>
+</div>

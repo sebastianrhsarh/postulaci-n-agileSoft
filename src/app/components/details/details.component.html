@@ -1,0 +1,27 @@
+<div class="container" *ngIf="superhero">
+  <h1 class="container__title">Detalles de {{ superhero.nombre }}</h1>
+  <div class="container__card card" style="width: 18rem;">
+    <img class="card-img-top" [src]="superhero.avatarURL" alt="Card image cap" onError="this.src='assets/mujermaravilla.jpg'">
+    <div class="container__card__headers card-body">
+      <div class="container__card__headers__header">
+        <h5 class="card-title">{{ superhero.nombre }}</h5>
+        <div class="id">#{{ superhero.id }}</div>
+      </div>
+      <p class="card-text">{{ superhero.descripcion }}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="details list-group-item">
+        <div class="bold">Nombre Real: </div>
+        <div>{{ superhero.nombreReal }}</div>
+      </li>
+      <li class="details list-group-item">
+        <div class="bold">¿Puede volar?: </div>
+        <div>{{ superhero.puedeVolar ? "Sí" : "No" }}</div>
+      </li>
+      <li class="details list-group-item">
+        <div class="bold">Habilidades: </div>
+        <div *ngFor="let skill of superhero.habilidades">{{ skill }}</div>
+      </li>
+    </ul>
+  </div>
+</div>

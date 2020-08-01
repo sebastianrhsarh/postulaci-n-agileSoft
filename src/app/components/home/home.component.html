@@ -1,0 +1,20 @@
+<div class="container">
+  <h1 class="container__title">Lista de Superheroes</h1>
+  <div class="container__filter">
+    <input placeholder="Buscar superheroe..." (keyup.enter)="buscarSuperheroe(terminoHeroe.value)" #terminoHeroe>
+    <button (click)="buscarSuperheroe(terminoHeroe.value)" type="button" class="btn btn-outline-dark">Buscar</button>
+  </div>
+  <div class="container__card card" style="width: 18rem;" *ngFor="let superhero of superheroes">
+    <img class="card-img-top" [src]="superhero.avatarURL" alt="Card image cap" onError="this.src='assets/mujermaravilla.jpg'">
+    <div class="container__card__headers card-body">
+      <div class="container__card__headers__header">
+        <h5 class="card-title">{{ superhero.nombre }}</h5>
+        <div class="id">#{{ superhero.id }}</div>
+      </div>
+      <p class="card-text">{{ superhero.descripcion }}</p>
+    </div>
+    <div class="card-body">
+      <a [routerLink]="['/superheroes/'+ superhero.id ]" class="card-link">Ver detalles</a>
+    </div>
+  </div>
+</div>
